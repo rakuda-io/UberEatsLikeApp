@@ -56,16 +56,22 @@ GEM
       minitest (~> 5.1)
       tzinfo (~> 1.1)
       zeitwerk (~> 2.2, >= 2.2.2)
+    awesome_print (1.9.2)
     bootsnap (1.7.5)
       msgpack (~> 1.0)
     builder (3.2.4)
     byebug (11.1.3)
+    coderay (1.1.3)
     concurrent-ruby (1.1.8)
     crass (1.0.6)
     erubi (1.10.0)
     ffi (1.15.0)
     globalid (0.4.2)
       activesupport (>= 4.2.0)
+    hirb (0.7.3)
+    hirb-unicode (0.0.5)
+      hirb (~> 0.5)
+      unicode-display_width (~> 0.1.1)
     i18n (1.8.10)
       concurrent-ruby (~> 1.0)
     listen (3.5.1)
@@ -84,6 +90,14 @@ GEM
     nio4r (2.5.7)
     nokogiri (1.11.3-arm64-darwin)
       racc (~> 1.4)
+    pry (0.13.1)
+      coderay (~> 1.1)
+      method_source (~> 1.0)
+    pry-byebug (3.9.0)
+      byebug (~> 11.0)
+      pry (~> 0.13.0)
+    pry-rails (0.3.9)
+      pry (>= 0.10.4)
     puma (4.3.7)
       nio4r (~> 2.0)
     racc (1.5.2)
@@ -136,6 +150,7 @@ GEM
     thread_safe (0.3.6)
     tzinfo (1.2.9)
       thread_safe (~> 0.1)
+    unicode-display_width (0.1.1)
     websocket-driver (0.7.3)
       websocket-extensions (>= 0.1.0)
     websocket-extensions (0.1.5)
@@ -145,9 +160,14 @@ PLATFORMS
   arm64-darwin-20
 
 DEPENDENCIES
+  awesome_print
   bootsnap (>= 1.4.2)
   byebug
+  hirb
+  hirb-unicode
   listen (~> 3.2)
+  pry-byebug
+  pry-rails
   puma (~> 4.1)
   rails (~> 6.0.3, >= 6.0.3.7)
   spring
