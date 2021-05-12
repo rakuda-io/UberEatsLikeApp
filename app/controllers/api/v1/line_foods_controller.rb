@@ -2,7 +2,7 @@ module Api
   module V1
     class LineFoodsController < ApplicationController
       # ①before_actionでcreateアクション前に現在のparams[:food_id]を受け取って@ordered_foodというインスタンス変数に代入している
-      before_action :set_food, only: %i[create]
+      before_action :set_food, only: %i[create replace]
 
       # ⑦line_foodを取得する。※.activeとはmodel/line_food.rbのscope :activeの事。モデル名.スコープ名という形で使用する。active: trueなline_foodの一覧が取得できる。
       def index
@@ -42,6 +42,23 @@ module Api
         }, status: :created
         else
         render json: {}, status: :internal_server_error
+        end
+      end
+
+      # activeなlinefood一覧を取得し、each文で各要素に対しupdate_attributeで:activeeをfalseに更新している。
+      def replace
+        LineFood.active.other_restaurant(@ordered_food.restaurant.id).each do |line_food|
+          line_food.update_attribute(:active, false)
+        end
+
+        set_line_food(@ordered_food)
+
+        if @line_food.save
+          render json: {
+            line_food: @line_food
+          }, status: :created
+        else
+          render json: {}, status: :internal_server_error
         end
       end
 
