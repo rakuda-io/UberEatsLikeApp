@@ -1,4 +1,4 @@
-export const COLORA = {
+export const COLORS = {
   MAIN: '#02A457',
   BORDER: '#e2e2e2',
   SUB_TEXT: '#545454',
