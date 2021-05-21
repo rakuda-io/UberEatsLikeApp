@@ -25,3 +25,11 @@ export const replaceLineFoods = (params) => {
   })
   .catch((e) => { throw e; })
 }
+
+export const fetchLineFoods = () => {
+  return axios.get(lineFoods)
+  .then(res => {
+    return res.data
+  })
+  .catch((e) => { throw e; })
+}
