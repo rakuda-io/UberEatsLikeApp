@@ -24,25 +24,21 @@ import { FoodWrapper } from '../components/FoodWrapper';
 import Skeleton from '@material-ui/lab/Skeleton';
 import { FoodOrderDialog, foodOrderDialog } from '../components/FoodOrderDialog';
 import { NewOrderConfirmDialog } from '../components/NewOrderConfirmDialog';
+import {
+  HeaderWrapper,
+  MainLogoImage
+} from '../components/StyledHeader.jsx';
 
 //images
 import MainLogo from '../images/logo.png';
 import FoodImage from '../images/food-image.jpg';
 
 //CSS
-const HeaderWrapper = styled.div`
-  display: flex;
-  justify-content: space-between;
-  padding: 8px 32px;
-`
 const BagIconWrapper = styled.div`
   padding-top: 24px;
 `
 const ColoredBagIcon = styled(LocalMallIcon)`
   color: ${COLORS.MAIN};
-`
-const MainLogoImage = styled.div`
-  height: 90px;
 `
 const FoodsList = styled.div`
   display: flex;
